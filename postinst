@@ -1,0 +1,31 @@
+#!/bin/sh
+# postinst script for rocm-env.
+
+set -e
+
+REVYOS_ROCM_VERSION=6.2.4
+REVYOS_ROCM_PATH=/opt/rocm-${ROCM_VERSION}
+REVYOS_ROCM_BIN_PATH=${ROCM_PATH}/bin
+REVYOS_ROCM_LIB_PATH=$(ROCM_PATH)/lib
+
+do_config() {
+    echo "${REVYOS_ROCM_LIB_PATH}" > /etc/ld.so.conf.d/revyos-rocm.conf
+    ldconfig
+    echo -e "export REVYOS_ROCM_VERSION=${REVYOS_ROCM_VERSION}\nexport PATH=\"$PATH:$REVYOS_BIN_PATH\"\n" > /etc/profile.d/revyos-rocm.sh
+}
+
+case "$1" in
+    configure)
+        do_config
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+    *)
+        echo "postinst called with unknown argument '$1'" >&2
+        exit 1
+    ;;
+esac
+
+exit 0

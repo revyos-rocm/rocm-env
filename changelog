@@ -1,0 +1,5 @@
+rocm-env (1.0-1) unstable; urgency=medium
+
+  * Initial release.
+
+ -- CHEN Xuan <chenxuan@iscas.ac.cn>  Wed, 12 Mar 2025 17:05:18 +0800

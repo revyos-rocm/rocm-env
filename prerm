@@ -1,0 +1,25 @@
+#!/bin/sh
+
+set -e
+
+rm_config() {
+    rm /etc/ld.so.conf.d/revyos-rocm.conf
+    ldconfig
+    rm /etc/profile.d/revyos-rocm.sh
+}
+
+case "$1" in
+    remove|upgrade|deconfigure)
+        rm_config
+    ;;
+
+    failed-upgrade)
+    ;;
+
+    *)
+        echo "prerm called with unknown argument '$1'" >&2
+        exit 1
+    ;;
+esac
+
+exit 0
