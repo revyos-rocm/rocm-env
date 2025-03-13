@@ -3,9 +3,9 @@
 set -e
 
 rm_config() {
-    rm /etc/ld.so.conf.d/revyos-rocm.conf
+    rm -f /etc/ld.so.conf.d/revyos-rocm.conf
     ldconfig
-    rm /etc/profile.d/revyos-rocm.sh
+    rm -f /etc/profile.d/revyos-rocm.sh
 }
 
 case "$1" in
