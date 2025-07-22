@@ -1,3 +1,9 @@
+rocm-env (6.4.2-1) trixie; urgency=medium
+
+  * Update version num to official.
+
+ --  <chenxuan@iscas.ac.cn>  Tue, 22 Jul 2025 18:25:24 +0800
+
 rocm-env (1.0-5) trixie; urgency=medium
 
   * Fix wrong shell cmd.
@@ -6,7 +12,7 @@ rocm-env (1.0-5) trixie; urgency=medium
 
 rocm-env (1.0-4) unstable; urgency=medium
 
-  * Upgrade to 6.4.1
+  * Upgrade to 6.4.2
 
  --  <chenxuan@iscas.ac.cn>  Wed, 16 Jul 2025 16:35:30 +0800
 
